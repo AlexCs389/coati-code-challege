@@ -1,8 +1,11 @@
 <%= render 'layouts/flash_messages' %>
 
-<%= link_to 'Importar datos', :import_new_data_home_index %>
+<div class="mt-5 mb-4">
+  <%= link_to 'Importar datos', :import_new_data_home_index, class: 'btn btn-dark' %>
+</div>
 
-<table>
+<div class="row mt-4">
+  <table class="table table-striped table-bordered">
     <thead>
     <tr>
       <th>Cliente</th>
@@ -26,8 +29,9 @@
     <% end %>
     <% if @sales.count == 0 %>
       <tr>
-        <td colspan="6">No hay datos</td>
+        <td colspan="6" class="text-center">No hay datos</td>
       </tr>
     <% end %>
     </tbody>
   </table>
+</div>

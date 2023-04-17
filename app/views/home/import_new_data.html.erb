@@ -1,13 +1,17 @@
 <%= render 'layouts/flash_messages' %>
 
-<%= link_to 'Ver datos', :home_index %>
+<div class="mt-5">
+  <%= link_to 'Ver datos', :home_index, class: 'btn btn-dark' %>
+</div>
 
-<%= form_tag(:add_data_home_index, multipart: true) do %>
-  <div>
-      <%= label_tag 'file', 'Archivo (.tsv)' %>
-      <%= file_field_tag 'file', required: true %>
-  </div>
-  <div>
-      <%= submit_tag 'Importar!' %>
-  </div>
-<% end %>
+<div class="row mt-5">
+  <%= form_tag(:add_data_home_index, multipart: true) do %>
+    <div class="mb-3">
+      <%= label_tag 'file', 'Archivo (.tsv)', class: 'form-label' %>
+      <%= file_field_tag 'file', class: 'form-control', required: true %>
+    </div>
+    <div>
+      <%= submit_tag 'Importar!', class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>
