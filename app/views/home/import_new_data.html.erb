@@ -1,4 +1,11 @@
-<h1>Home#import_new_data</h1>
-<p>Find me in app/views/home/import_new_data.html.erb</p>
-
 <%= link_to 'Ver datos', :home_index %>
+
+<%= form_tag(:add_data_home_index, multipart: true) do %>
+  <div>
+      <%= label_tag 'file', 'Archivo (.tsv)' %>
+      <%= file_field_tag 'file', required: true %>
+  </div>
+  <div>
+      <%= submit_tag 'Importar!' %>
+  </div>
+<% end %>
