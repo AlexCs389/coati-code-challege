@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount_of_pieces: 1
+  client: one
+  product: one
+  seller: one
+
+two:
+  amount_of_pieces: 1
+  client: two
+  product: two
+  seller: two
