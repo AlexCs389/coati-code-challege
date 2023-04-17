@@ -8,9 +8,9 @@ class HomeController < ApplicationController
     result = User::ImportData.run(file_path: file_path)
     
     if result.valid?
-      redirect_to :home_index
+      redirect_to :home_index, notice: 'Datos importados exitosamente'
     else
-      redirect_to :import_new_data_home_index
+      redirect_to :import_new_data_home_index, alert: result.errors.full_messages.join(', ')
     end
   end
 
