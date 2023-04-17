@@ -1,2 +1,31 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<%= link_to 'Importar datos', :import_new_data_home_index %>
+
+<table>
+    <thead>
+    <tr>
+      <th>Cliente</th>
+      <th>Descripción del producto</th>
+      <th>Precio por pieza</th>
+      <th>Numero de piezas</th>
+      <th>Dirección del vendedor</th>
+      <th>Nombre del vendedor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @sales.each do |sale| %>
+      <tr>
+        <td><%= sale.client.name %></td>
+        <td><%= sale.product.description %></td>
+        <td><%= sale.product.price_per_piece %></td>
+        <td><%= sale.amount_of_pieces %></td>
+        <td><%= sale.seller.address %></td>
+        <td><%= sale.seller.name %></td>
+      </tr>
+    <% end %>
+    <% if @sales.count == 0 %>
+      <tr>
+        <td colspan="6">No hay datos</td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>

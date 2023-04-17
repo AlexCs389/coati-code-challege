@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   def index
+    @sales = Sale.includes(:client, :product, :seller)
   end
 
   def add_data
